@@ -1,3 +1,51 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@layer components {
+  .notice {
+    @apply bg-green-300 text-green-800 py-2 text-center text-xl font-bold;
+  }
+  .alert {
+    @apply bg-red-300 text-red-800 py-2 text-center text-xl font-bold;
+  }
+  .form-label {
+    @apply mb-2 font-semibold text-lg text-gray-900;
+  }
+  .form-div {
+    @apply flex flex-col mb-4;
+  }
+  .form-checkbox-div {
+    @apply flex flex-row mb-4;
+  }
+  .form-datetime-div {
+    @apply flex flex-row mb-4;
+  }
+  .form-input {
+    @apply border rounded-md border-gray-400 py-2 px-3 text-gray-800 mb-2;
+  }
+  .form-input:focus {
+    @apply outline-none ring border-gray-600;
+  }
+  .btn {
+    @apply font-bold py-2 px-4 border rounded-md;
+  }
+  .btn-primary {
+    @apply bg-blue-500 text-white border-gray-700;
+  }
+  .btn-primary:hover {
+    @apply bg-blue-800 cursor-pointer;
+  }
+  .btn-secondary {
+    @apply bg-white border-blue-500 text-blue-500;
+  }
+  .btn-secondary:hover {
+    @apply border-blue-800 text-blue-800;
+  }
+  .btn-secondary-navbar {
+    @apply bg-transparent text-gray-400 border-gray-400;
+  }
+  .btn-secondary-navbar:hover {
+    @apply text-white border-white;
+  }
+}
