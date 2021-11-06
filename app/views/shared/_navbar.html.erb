@@ -1,0 +1,31 @@
+<div class="bg-gray-800 text-white antialiased p-6">
+  <nav class="flex justify-around">
+    <div class="flex flex-row items-center">
+      <div>
+        <%= link_to "Gamble Tracker", root_path, class: 'text-3xl font-bold' %>
+      </div>
+      <div>
+        <ul class="flex flex-row">
+          <li class="pl-10"><%= link_to "Events", root_path, class: 'text-md hover:text-gray-400' %></li>
+          <li class="pl-5"><%= link_to "Thinkers", root_path, class: 'text-md hover:text-gray-400' %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ml-auto">
+      <ul class="flex flex-row items-center">
+        <% if user_signed_in? %>
+          <%= link_to user_path(current_user) do %>
+          <div class="flex flex-row items-center hover:text-gray-400">
+            <li class="pr-2 inline"><%= image_tag current_user.image, class: 'rounded-full w-12 h-12' %></li>
+            <li class="pr-5 inline"><%= current_user.email %></li>
+          </div>
+          <% end %>
+          <li class="pr-5"><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'btn btn-secondary-navbar' %></li>
+        <% else %>  
+          <li class="pr-5"><%= link_to "Sign in", new_user_session_path, class: 'btn btn-secondary-navbar' %></li>
+          <li class="pr-5"><%= link_to "Register", new_user_registration_path, class: 'btn btn-primary' %></li>
+        <% end %>
+      </ul>      
+    </div>
+  </nav>
+</div>
