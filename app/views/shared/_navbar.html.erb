@@ -16,13 +16,13 @@
         <% if user_signed_in? %>
           <%= link_to user_path(current_user) do %>
           <div class="flex flex-row items-center hover:text-gray-400">
-            <li class="pr-2 inline"><%= image_tag current_user.image, class: 'rounded-full w-12 h-12' %></li>
+            <li class="pr-2 inline"><%= image_tag current_user.image_location, class: 'rounded-full w-12 h-12' %></li>
             <li class="pr-5 inline"><%= current_user.email %></li>
           </div>
           <% end %>
           <li class="pr-5"><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'btn btn-secondary-navbar' %></li>
         <% else %>  
-          <li class="pr-5"><%= link_to "Sign in", new_user_session_path %></li>
+          <li class="pr-5"><%= link_to "Sign in", new_user_session_path, class: 'text-md hover:text-white' %></li>
           <li class="pr-5"><%= link_to "Register", new_user_registration_path, class: 'btn btn-primary' %></li>
         <% end %>
       </ul>      
