@@ -12,8 +12,9 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-
+    <% unless devise_controller? %>
+      <%= render "shared/navbar" %>
+    <% end %>
     <% flash.each do |type, msg| %>
       <div class= "<%= type %>">
         <%= msg %>
