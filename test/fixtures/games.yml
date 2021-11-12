@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  trip: one
+  date: 2021-11-11
+  buy_in: 1
+  cash_out: 1
+
+two:
+  user: two
+  trip: two
+  date: 2021-11-11
+  buy_in: 1
+  cash_out: 1

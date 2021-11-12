@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @game.user_id %>
+</p>
+
+<p>
+  <strong>Trip:</strong>
+  <%= @game.trip_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @game.date %>
+</p>
+
+<p>
+  <strong>Buy in:</strong>
+  <%= @game.buy_in %>
+</p>
+
+<p>
+  <strong>Cash out:</strong>
+  <%= @game.cash_out %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
