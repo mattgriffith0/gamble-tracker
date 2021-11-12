@@ -17,8 +17,8 @@
   <tbody>
     <% @games.each do |game| %>
       <tr>
-        <td><%= game.user_id %></td>
-        <td><%= game.trip_id %></td>
+        <td><%= game.user.first_name %> <%= game.user.last_name %></td>
+        <td><% if game.trip_id? %> <%= game.trip.name %> <% end %></td>
         <td><%= game.date %></td>
         <td><%= game.buy_in %></td>
         <td><%= game.cash_out %></td>
