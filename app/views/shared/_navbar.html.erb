@@ -6,8 +6,9 @@
       </div>
       <div>
         <ul class="flex flex-row">
-          <li class="pl-10"><%= link_to "Events", root_path, class: 'text-md hover:text-white' %></li>
-          <li class="pl-5"><%= link_to "Thinkers", root_path, class: 'text-md hover:text-white' %></li>
+          <li class="pl-10"><%= link_to "Punters", users_path, class: 'text-md hover:text-white' %></li>
+          <li class="pl-5"><%= link_to "Occasions", trips_path, class: 'text-md hover:text-white' %></li>
+          <li class="pl-5"><%= link_to "Sessions", root_path, class: 'text-md hover:text-white' %></li>
         </ul>
       </div>
     </div>
@@ -16,7 +17,7 @@
         <% if user_signed_in? %>
           <%= link_to user_path(current_user) do %>
           <div class="flex flex-row items-center hover:text-gray-400">
-            <li class="pr-2 inline"><%= image_tag current_user.image_location, class: 'rounded-full w-12 h-12' %></li>
+            <li class="pr-2 inline"><%= image_tag current_user.image_location, class: 'rounded-full w-12 h-12 border-black border-2' %></li>
             <li class="pr-5 inline"><%= current_user.email %></li>
           </div>
           <% end %>

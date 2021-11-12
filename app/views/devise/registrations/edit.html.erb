@@ -1,6 +1,6 @@
 <%= render "shared/navbar" %>
-<div class="w-1/2 mx-auto border border-black">
-  <h2 class="">Edit <%= resource_name.to_s.humanize %></h2>
+<div class="w-1/2 mx-auto">
+  <h2 class="flex justify-center text-2xl font-bold">Edit <%= resource_name.to_s.humanize %></h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -44,13 +44,9 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Update", class: 'btn btn-primary' %>
+      <%= f.submit "Update", class: 'btn btn-primary mb-2' %>
+      <%= link_to "Cancel", user_path(resource), class: 'btn btn-secondary mb-2 ml-4' %>
     </div>
   <% end %>
 
-  <h3>Cancel my account</h3>
-
-  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-  <%= link_to "Back", :back %>
 </div>
