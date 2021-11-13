@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_12_062013) do
+ActiveRecord::Schema.define(version: 2021_11_13_002528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "casinos", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
+    t.boolean "active"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "games", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -23,6 +34,8 @@ ActiveRecord::Schema.define(version: 2021_11_12_062013) do
     t.integer "cash_out"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "casino_id", null: false
+    t.index ["casino_id"], name: "index_games_on_casino_id"
     t.index ["trip_id"], name: "index_games_on_trip_id"
     t.index ["user_id"], name: "index_games_on_user_id"
   end
@@ -55,6 +68,7 @@ ActiveRecord::Schema.define(version: 2021_11_12_062013) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "games", "casinos"
   add_foreign_key "games", "trips"
   add_foreign_key "games", "users"
 end

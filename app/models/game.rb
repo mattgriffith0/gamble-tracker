@@ -1,5 +1,6 @@
 class Game < ApplicationRecord
   belongs_to :user
+  belongs_to :casino
   belongs_to :trip, optional: true
 
   validates :buy_in, numericality: { only_integer: true, greater_than: 0}

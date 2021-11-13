@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index]
   resources :trips
-  resources :games, path: 'sessions', as: 'sessions'
+  resources :games
+  resources :casinos
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'main#index'
