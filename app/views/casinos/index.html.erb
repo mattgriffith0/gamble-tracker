@@ -1,3 +1,11 @@
-<h3 class="text-2xl mb-3">All Casinos</h3>
+<h3 class="text-4xl my-3 font-extrabold text-center">All Casinos</h3>
 
-<%= link_to "Add Casino", new_casino_path, class: 'btn btn-primary' %>
+<div class="w-4/5 md:w-3/5 mx-auto mb-3">
+  <% @casinos.each do |casino| %>
+  <div class="mb-3">
+    <%= render casino %>
+  </div>
+  <% end %>
+
+  <%= link_to "Add New Casino", new_casino_path, class: 'btn btn-primary' %>
+</div>

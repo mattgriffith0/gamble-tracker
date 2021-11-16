@@ -1,0 +1,10 @@
+<%= link_to casino_path(casino) do %>
+  <div class="mx-auto mb-2 border-2 rounded-md border-gray-300 hover:shadow-md flex flex-row">
+    <div class="w-auto">
+      <%= image_tag "https://crossedlink.com/uploads/images/profile_images/default_company.jpg", width: "125" %>
+    </div>
+    <div class="pl-3 pt-2 flex-grow">
+      <p><%= casino.name %></p>
+    </div>
+  </div>
+<% end %>
