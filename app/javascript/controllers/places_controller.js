@@ -5,7 +5,7 @@ import { Controller } from "stimulus"
 
 
 export default class extends Controller {
-  static targets = [ "field", "map", "latitude", "longitude", "address", "name" ]
+  static targets = [ "field", "map", "latitude", "longitude", "address", "name", "number", "street", "city", "state", "postcode", "country" ]
 
   connect() {
     if (typeof(google) != "undefined") {
@@ -58,6 +58,12 @@ export default class extends Controller {
     this.longitudeTarget.value = place.geometry.location.lng()
     this.nameTarget.value = place.name
     this.addressTarget.value = place.formatted_address
+    this.numberTarget.value = place.address_components.filter(ac=>~ac.types.indexOf('street_number'))[0].long_name
+    this.streetTarget.value = place.address_components.filter(ac=>~ac.types.indexOf('route'))[0].short_name
+    this.cityTarget.value = place.address_components.filter(ac=>~ac.types.indexOf('locality'))[0].long_name
+    this.stateTarget.value = place.address_components.filter(ac=>~ac.types.indexOf('administrative_area_level_1'))[0].short_name
+    this.postcodeTarget.value = place.address_components.filter(ac=>~ac.types.indexOf('postal_code'))[0].long_name
+    this.countryTarget.value = place.address_components.filter(ac=>~ac.types.indexOf('country'))[0].long_name
   }
 
   keydown(event) {

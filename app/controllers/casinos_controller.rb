@@ -37,6 +37,6 @@ class CasinosController < ApplicationController
   end
   
   def casino_params
-    params.require(:casino).permit(:name, :address, :latitude, :longitude, :active, :image)
+    params.require(:casino).permit(:name, :address, :latitude, :longitude, :active, :image, :street_number, :street, :city, :state, :postcode, :country)
   end
 end
