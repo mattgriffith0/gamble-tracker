@@ -10,28 +10,31 @@
       </ul>
     </div>
   <% end %>
+  <div class="flex flex-col md:flex-row">
+    <div class="flex flex-col mx-auto md:p-2 w-4/5 md:w-1/3">
+      <div class="form-div">
+        <%= form.label :trip_id, class: 'form-label' %>
+        <%= form.text_field :trip_id, class: 'form-input' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :trip_id %>
-    <%= form.text_field :trip_id %>
-  </div>
+      <div class="form-datetime-div">
+        <%= form.label :date, class: 'form-label pr-4' %>
+        <%= form.date_select :date, class: 'form-input' %>
+      </div>
+      <div class="flex flex-row">
+        <div class="form-div pr-2 w-1/2">
+          <%= form.label :buy_in, class: 'form-label' %>
+          <%= form.number_field :buy_in, class: 'form-input' %>
+        </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :buy_in %>
-    <%= form.number_field :buy_in %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cash_out %>
-    <%= form.number_field :cash_out %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+        <div class="form-div pl-2 w-1/2">
+          <%= form.label :cash_out, class: 'form-label' %>
+          <%= form.number_field :cash_out, class: 'form-input' %>
+        </div>
+      </div>
+      <div class="actions">
+        <%= form.submit "Add Session", class: 'btn btn-primary' %>
+      </div>
+    </div>
   </div>
 <% end %>
