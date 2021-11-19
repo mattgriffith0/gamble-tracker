@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_023240) do
+ActiveRecord::Schema.define(version: 2021_11_19_023451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,11 @@ ActiveRecord::Schema.define(version: 2021_11_19_023240) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "casino_id", null: false
+    t.bigint "odds_id", null: false
+    t.bigint "currency_id", null: false
     t.index ["casino_id"], name: "index_games_on_casino_id"
+    t.index ["currency_id"], name: "index_games_on_currency_id"
+    t.index ["odds_id"], name: "index_games_on_odds_id"
     t.index ["trip_id"], name: "index_games_on_trip_id"
     t.index ["user_id"], name: "index_games_on_user_id"
   end
@@ -88,6 +92,8 @@ ActiveRecord::Schema.define(version: 2021_11_19_023240) do
   end
 
   add_foreign_key "games", "casinos"
+  add_foreign_key "games", "currencies"
+  add_foreign_key "games", "odds", column: "odds_id"
   add_foreign_key "games", "trips"
   add_foreign_key "games", "users"
 end
