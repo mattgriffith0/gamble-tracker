@@ -1,6 +1,10 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_game, only: %i[ show edit update destroy ]
+  before_action :set_trip_array, only: %i[ new edit create update ]
+  before_action :set_casino_array, only: %i[ new edit create update ]
+  before_action :set_currency_array, only: %i[ new edit create update ]
+  before_action :set_odds_array, only: %i[ new edit create update ]
 
   # GET /games or /games.json
   def index
@@ -18,6 +22,7 @@ class GamesController < ApplicationController
 
   # GET /games/1/edit
   def edit
+    @odds = Odd.all
   end
 
   # POST /games or /games.json
@@ -66,6 +71,22 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.require(:game).permit(:user_id, :trip_id, :casino_id, :date, :buy_in, :cash_out)
+      params.require(:game).permit(:user_id, :trip_id, :casino_id, :date, :buy_in, :cash_out, :currency_id, :odds_id)
+    end
+
+    def set_trip_array
+      @trips = Trip.all
+    end
+
+    def set_odds_array
+      @odds = Odd.all
+    end
+
+    def set_currency_array
+      @currencies = Currency.all
+    end
+
+    def set_casino_array
+      @casinos = Casino.all
     end
 end

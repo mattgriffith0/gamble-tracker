@@ -2,12 +2,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @game.user_id %>
+  <%= @game.user.first_name %> <%= @game.user.last_name %>
 </p>
 
 <p>
   <strong>Trip:</strong>
-  <%= @game.trip_id %>
+  <%= @game.trip.name %>
 </p>
 
 <p>
@@ -17,12 +17,12 @@
 
 <p>
   <strong>Buy in:</strong>
-  <%= @game.buy_in %>
+  $<%= @game.buy_in %>
 </p>
 
 <p>
   <strong>Cash out:</strong>
-  <%= @game.cash_out %>
+  $<%= @game.cash_out %>
 </p>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
