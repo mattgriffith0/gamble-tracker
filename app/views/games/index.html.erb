@@ -1,11 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Games</h1>
+<h3 class="text-4xl my-3 font-extrabold text-center">All Sessions</h3>
 
 <table>
   <thead>
     <tr>
-      <th>User</th>
+      <th>Player</th>
       <th>Trip</th>
       <th>Date</th>
       <th>Buy in</th>
@@ -20,8 +18,8 @@
         <td><%= game.user.first_name %> <%= game.user.last_name %></td>
         <td><% if game.trip_id? %> <%= game.trip.name %> <% end %></td>
         <td><%= game.date %></td>
-        <td><%= game.buy_in %></td>
-        <td><%= game.cash_out %></td>
+        <td>$<%= game.buy_in %></td>
+        <td>$<%= game.cash_out %></td>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
         <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Game', new_game_path %>
+<%= link_to 'Add New Session', new_game_path, class: 'btn btn-primary' %>
