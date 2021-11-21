@@ -27,6 +27,9 @@
   .form-input:focus {
     @apply outline-none ring border-gray-600;
   }
+  .form-readonly {
+    @apply border rounded-md border-gray-400 py-2 px-3 text-gray-800 mb-2 cursor-default bg-gray-200;
+  }
   .btn {
     @apply font-bold py-2 px-4 border rounded-md;
   }

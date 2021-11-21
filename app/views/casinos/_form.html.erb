@@ -19,22 +19,22 @@
 
       <div class="flex-col flex">
         <%= form.label :name, class: 'form-label' %>
-        <%= form.search_field :name, class: 'form-input', readonly: true, data: { target: "places.name" } %>
+        <%= form.search_field :name, class: 'form-readonly', readonly: true, placeholder: "waiting for search result...", data: { target: "places.name" } %>
       </div>
 
       <div class="flex flex-col">
         <%= form.label :address, class: 'form-label' %>
-        <%= form.text_field :address, class: 'form-input', readonly: true, data: { target: "places.address" } %>
+        <%= form.text_field :address, class: 'form-readonly', readonly: true, placeholder: "waiting for search result...", data: { target: "places.address" } %>
       </div>
 
       <div class="flex flex-col">
         <%= form.label :latitude, class: 'form-label' %>
-        <%= form.text_field :latitude, class: 'form-input', readonly: true, data: { target: "places.latitude" } %>
+        <%= form.text_field :latitude, class: 'form-readonly', readonly: true, placeholder: "waiting for search result...", data: { target: "places.latitude" } %>
       </div>
 
       <div class="flex flex-col">
         <%= form.label :longitude, class: 'form-label' %>
-        <%= form.text_field :longitude, class: 'form-input', readonly: true, data: { target: "places.longitude" } %>
+        <%= form.text_field :longitude, class: 'form-readonly', readonly: true, placeholder: "waiting for search result...", data: { target: "places.longitude" } %>
       </div>
 
       <%= form.hidden_field :street_number, data: { target: "places.number" } %>

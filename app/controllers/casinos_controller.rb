@@ -7,6 +7,9 @@ class CasinosController < ApplicationController
   end
 
   def show
+    @client = OpenWeatherMap::API.new(Rails.application.credentials[:open_weather_api_key], 'en', 'metric')
+    @client = @client.current([@casino.longitude, @casino.latitude])
+    @weather = @client.weather_conditions
   end
 
   def new
@@ -28,6 +31,14 @@ class CasinosController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+    @casino.destroy
+    respond_to do |format|
+      format.html { redirect_to casinos_url, notice: "Casino was successfully deleted." }
+      format.json { head :no_content }
+    end
   end
 
   private

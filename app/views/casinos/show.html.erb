@@ -1,1 +1,19 @@
 <h3 class="text-4xl my-3 font-extrabold text-center"><%= @casino.name %></h3>
+
+
+<div class="w-4/5 md:w-max mx-auto border-2 border-gray-300 rounded-md flex flex-row items-center">
+  <div class="bg-gray-200">
+    <%= image_tag @weather.icon, width: "50", height: "50", class: 'border' %>
+  </div>
+  <div class="px-2 text-3xl font-medium antialiased border-r">
+    <%= @weather.temperature.ceil %>°C
+  </div>
+  <div class="px-4 text-lg">
+    Forecast for <%= link_to @casino.city + ', ' + @casino.state, "https://www.google.com/search?q=weather+" + @casino.city + '+' + @casino.state, target: '_blank', class: 'text-blue-400' %>
+  </div>
+</div>
+
+<div class="mx-auto w-1/2 md:w-2/5 my-3 flex flex-row justify-around">
+  <%= link_to "Edit Casino", edit_casino_path(@casino), class: 'btn btn-secondary mr-2 flex-none' %>
+  <%= link_to "Delete Casino", @casino, method: :delete, class: 'btn btn-secondary flex-non', data: { confirm: 'Are you sure?' } %>
+</div>
