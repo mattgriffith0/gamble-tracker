@@ -22,7 +22,7 @@
             <li class="pr-5 inline"><%= current_user.email %></li>
           </div>
           <% end %>
-          <li class="pr-5"><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'btn btn-secondary-navbar' %></li>
+          <li class="pr-5"><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'btn btn-secondary' %></li>
         <% else %>  
           <li class="pr-5"><%= link_to "Sign in", new_user_session_path, class: 'text-md hover:text-white' %></li>
           <li class="pr-5"><%= link_to "Register", new_user_registration_path, class: 'btn btn-primary' %></li>

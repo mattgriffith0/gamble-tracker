@@ -30,6 +30,9 @@
   .form-readonly {
     @apply border rounded-md border-gray-400 py-2 px-3 text-gray-800 mb-2 cursor-default bg-gray-200;
   }
+  .form-readonly:focus {
+    @apply outline-none;
+  }
   .btn {
     @apply font-bold py-2 px-4 border rounded-md;
   }
@@ -45,10 +48,10 @@
   .btn-secondary:hover {
     @apply border-red-500 text-red-500;
   }
-  .btn-secondary-navbar {
-    @apply bg-white text-red-700 border-red-700;
+  .btn-outline-black {
+    @apply bg-white text-gray-400 border-2 border-gray-400;
   }
-  .btn-secondary-navbar:hover {
-    @apply text-red-500 border-red-500;
+  .btn-outline-black:hover {
+    @apply text-gray-800 border-gray-800;
   }
 }
